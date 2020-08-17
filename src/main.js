@@ -1,21 +1,16 @@
-//console.log('webpack')
-let tools = require('./a')
-import './test.css'
-import baidu from './imgs/baidu.png'
+import Vue from 'vue';
+import App from './App'
 
-//import res from './data.json'
+//注入路由
+import router from './router'
+
+//注入store
+import store from './store'
 
 
-
-let result = tools.sum(10, 80)
-let result2 = tools.jian(10, 80)
-console.log(result)
-console.log(baidu)
-
-var oImg = document.createElement('img')
-var odiv = document.createElement('div')
-odiv.innerHTML="hello webpack11112223334444"
-oImg.src=`./${baidu}`
-
-document.getElementById('app').appendChild(oImg)
-document.getElementById('app').appendChild(odiv)
+new Vue({
+    el: '#app',
+    router,
+    store,
+    render: h => h(App)
+})
